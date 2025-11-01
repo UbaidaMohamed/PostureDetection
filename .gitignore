@@ -1,0 +1,22 @@
+# Root gitignore for the repository
+# Ignore environment files and local virtual environments
+.env
+.env.*
+.venv
+.venv*/
+.venv_mediapipe/
+/.venv_mediapipe/
+
+# Node
+node_modules/
+
+# Build outputs
+dist/
+
+# OS/editor files
+.DS_Store
+.vscode/
+.idea/posture.py
+
+# Ignore local Python posture script (sensitive / large binary deps)
+posture.py

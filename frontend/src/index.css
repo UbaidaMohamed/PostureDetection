@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Posture Correction System Design System
+Health-focused, clean, modern aesthetic inspired by Apple Health and Notion
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base colors - clean whites and grays */
+    --background: 0 0% 98%;
+    --foreground: 215 25% 12%;
+
+    /* Card system with subtle elevation */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 12%;
+
+    /* Primary - Calming teal for health/wellness */
+    --primary: 186 85% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 186 85% 55%;
+    --primary-glow: 186 85% 65%;
+
+    /* Secondary - Soft blue-gray */
+    --secondary: 210 15% 94%;
+    --secondary-foreground: 215 25% 25%;
+
+    /* Muted tones */
+    --muted: 210 15% 96%;
+    --muted-foreground: 215 12% 55%;
+
+    /* Accent - Wellness green */
+    --accent: 142 70% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Status colors for posture states */
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* UI elements */
+    --border: 210 15% 88%;
+    --input: 210 15% 94%;
+    --ring: 186 85% 45%;
+
+    --radius: 0.75rem;
+
+    /* Gradients for modern UI */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(210 15% 99%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(142 70% 55%));
+    
+    /* Shadows for elevation */
+    --shadow-sm: 0 2px 8px -2px hsl(var(--primary) / 0.08);
+    --shadow-md: 0 8px 25px -8px hsl(var(--primary) / 0.12);
+    --shadow-lg: 0 16px 40px -12px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.3);
+
+    /* Sidebar - keeping consistent with main theme */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 215 25% 25%;
+    --sidebar-primary: 186 85% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 15% 96%;
+    --sidebar-accent-foreground: 215 25% 25%;
+    --sidebar-border: 210 15% 88%;
+    --sidebar-ring: 186 85% 45%;
+  }
+
+  .dark {
+    /* Dark mode - maintaining health/wellness theme */
+    --background: 215 25% 8%;
+    --foreground: 210 15% 92%;
+
+    --card: 215 25% 10%;
+    --card-foreground: 210 15% 92%;
+
+    --popover: 215 25% 10%;
+    --popover-foreground: 210 15% 92%;
+
+    --primary: 186 85% 55%;
+    --primary-foreground: 215 25% 8%;
+    --primary-light: 186 85% 65%;
+    --primary-glow: 186 85% 75%;
+
+    --secondary: 215 25% 15%;
+    --secondary-foreground: 210 15% 85%;
+
+    --muted: 215 25% 12%;
+    --muted-foreground: 215 12% 65%;
+
+    --accent: 142 70% 55%;
+    --accent-foreground: 215 25% 8%;
+
+    --success: 142 70% 55%;
+    --success-foreground: 215 25% 8%;
+    --warning: 38 92% 60%;
+    --warning-foreground: 215 25% 8%;
+    --destructive: 0 75% 65%;
+    --destructive-foreground: 215 25% 8%;
+
+    --border: 215 25% 18%;
+    --input: 215 25% 15%;
+    --ring: 186 85% 55%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(215 25% 12%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(142 70% 65%));
+    
+    /* Dark mode shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(0 0% 0% / 0.15);
+    --shadow-md: 0 8px 25px -8px hsl(0 0% 0% / 0.25);
+    --shadow-lg: 0 16px 40px -12px hsl(0 0% 0% / 0.35);
+    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.4);
+
+    --sidebar-background: 215 25% 10%;
+    --sidebar-foreground: 210 15% 85%;
+    --sidebar-primary: 186 85% 55%;
+    --sidebar-primary-foreground: 215 25% 8%;
+    --sidebar-accent: 215 25% 15%;
+    --sidebar-accent-foreground: 210 15% 85%;
+    --sidebar-border: 215 25% 18%;
+    --sidebar-ring: 186 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/40;
+  }
+}
+
+@layer components {
+  /* Custom component styles */
+  .card-elevated {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-md);
+  }
+
+  .status-good {
+    @apply bg-success/10 text-success border-success/20;
+  }
+
+  .status-warning {
+    @apply bg-warning/10 text-warning border-warning/20;
+  }
+
+  .status-bad {
+    @apply bg-destructive/10 text-destructive border-destructive/20;
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+}

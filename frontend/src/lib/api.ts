@@ -1,8 +1,12 @@
 // src/lib/api.ts
 import axios from "axios";
 
+// Use Vite env var at build time, otherwise fall back to current origin + /api
+const rawBase = (import.meta.env.VITE_API_URL as string) || `${window.location.origin}/api`;
+const baseURL = rawBase.replace(/\/$/, "");
+
 const API = axios.create({
-  baseURL: "http://localhost:5003/api", // Updated to match backend port
+  baseURL,
 });
 
 // Attach JWT token if logged in

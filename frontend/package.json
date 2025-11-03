@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
   "dev": "vite",
-  "build": "vite build && node scripts/copy_index_to_200.js",
-  "build:dev": "vite build --mode development && node scripts/copy_index_to_200.js",
+  "build": "vite build && node scripts/copy_index_to_200.cjs",
+  "build:dev": "vite build --mode development && node scripts/copy_index_to_200.cjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },

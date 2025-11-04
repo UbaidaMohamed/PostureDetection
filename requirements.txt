@@ -13,4 +13,7 @@ opencv-python>=4.5.5
 # Optional: if running on a headless server (no GUI), use this instead of opencv-python
 # opencv-python-headless
 
+# WSGI server for deployment (e.g. Render)
+gunicorn>=20.1.0
+
 # Add any other project-specific dependencies here

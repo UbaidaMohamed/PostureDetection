@@ -16,4 +16,7 @@ opencv-python>=4.5.5
 # WSGI server for deployment (e.g. Render)
 gunicorn>=20.1.0
 
+# Web framework for the WSGI app
+Flask>=2.0,<3.0
+
 # Add any other project-specific dependencies here

@@ -7,6 +7,9 @@
 .venv_mediapipe/
 /.venv_mediapipe/
 
+# Local environment folder (added to avoid committing virtualenvs)
+EnvName/
+
 # Node
 node_modules/
 
@@ -16,7 +19,4 @@ dist/
 # OS/editor files
 .DS_Store
 .vscode/
-.idea/posture.py
 
-# Ignore local Python posture script (sensitive / large binary deps)
-posture.py
